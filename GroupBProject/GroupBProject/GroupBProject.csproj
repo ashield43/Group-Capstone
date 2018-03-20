@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{266E76EF-FF1C-4DB9-8F3B-9AE10DB4AD1A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GroupBProject</RootNamespace>
+    <AssemblyName>GroupBProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Design.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WebDesign.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\Inspector.cs" />
+    <Compile Include="Business\Qualification.cs" />
+    <Compile Include="Business\ReportType.cs" />
+    <Compile Include="Business\User.cs" />
+    <Compile Include="Database\ConnectionString.cs" />
+    <Compile Include="Database\DailyAvailabilityCommands.cs" />
+    <Compile Include="Database\InspectorCommands.cs" />
+    <Compile Include="Database\JobCommands.cs" />
+    <Compile Include="Database\ProjectCommands.cs" />
+    <Compile Include="Database\QualificationCommands.cs" />
+    <Compile Include="Database\ReportCommands.cs" />
+    <Compile Include="Database\UserCommands.cs" />
+    <Compile Include="Forms\AddInspectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddInspectorForm.designer.cs">
+      <DependentUpon>AddInspectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\DailyAvailability.cs" />
+    <Compile Include="Forms\AddJobForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddJobForm.Designer.cs">
+      <DependentUpon>AddJobForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddNewAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddNewAdminForm.Designer.cs">
+      <DependentUpon>AddNewAdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminUpdateInfoFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminUpdateInfoFrom.Designer.cs">
+      <DependentUpon>AdminUpdateInfoFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AvailableInspectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AvailableInspectorForm.Designer.cs">
+      <DependentUpon>AvailableInspectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateProjectForm.Designer.cs">
+      <DependentUpon>CreateProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CurrentInspectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CurrentInspectorForm.Designer.cs">
+      <DependentUpon>CurrentInspectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GuestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GuestForm.Designer.cs">
+      <DependentUpon>GuestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Job.cs" />
+    <Compile Include="Forms\MainLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainLogin.Designer.cs">
+      <DependentUpon>MainLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageUserForm.Designer.cs">
+      <DependentUpon>ManageUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewGuestUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewGuestUserForm.Designer.cs">
+      <DependentUpon>NewGuestUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReportSelectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportSelectorForm.Designer.cs">
+      <DependentUpon>ReportSelectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Hashing.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Business\Project.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\InspectorAvailabilityReport\InspectorAvailabilityReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\InspectorAvailabilityReport\InspectorAvailabilityReportForm.Designer.cs">
+      <DependentUpon>InspectorAvailabilityReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InspectorAvailabilityReport\InspectorWeeklyAvailabilityReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InspectorWeeklyAvailabilityReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InspectorContactReport\InspectorContactReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InspectorContactReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InspectorContactReport\InspectorContactReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\InspectorContactReport\InspectorContactReportForm.Designer.cs">
+      <DependentUpon>InspectorContactReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InspectorJobsReport\InspectorJobsReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InspectorJobsReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InspectorJobsReport\InspectorJobsReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\InspectorJobsReport\InspectorJobsReportForm.Designer.cs">
+      <DependentUpon>InspectorJobsReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ProjectProgressReport\ProjectProgressReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectProgressReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ProjectProgressReport\ProjectProgressReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ProjectProgressReport\ProjectProgressReportForm.Designer.cs">
+      <DependentUpon>ProjectProgressReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Utility\Validator.cs" />
+    <EmbeddedResource Include="Forms\AddInspectorForm.resx">
+      <DependentUpon>AddInspectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddJobForm.resx">
+      <DependentUpon>AddJobForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddNewAdminForm.resx">
+      <DependentUpon>AddNewAdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminUpdateInfoFrom.resx">
+      <DependentUpon>AdminUpdateInfoFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AvailableInspectorForm.resx">
+      <DependentUpon>AvailableInspectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateProjectForm.resx">
+      <DependentUpon>CreateProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CurrentInspectorForm.resx">
+      <DependentUpon>CurrentInspectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GuestForm.resx">
+      <DependentUpon>GuestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainLogin.resx">
+      <DependentUpon>MainLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageUserForm.resx">
+      <DependentUpon>ManageUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewGuestUserForm.resx">
+      <DependentUpon>NewGuestUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportSelectorForm.resx">
+      <DependentUpon>ReportSelectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports\InspectorAvailabilityReport\InspectorAvailabilityReportForm.resx">
+      <DependentUpon>InspectorAvailabilityReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InspectorAvailabilityReport\InspectorWeeklyAvailabilityReport.rdlc" />
+    <EmbeddedResource Include="Reports\InspectorContactReport\InspectorContactReportForm.resx">
+      <DependentUpon>InspectorContactReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InspectorContactReport\InspectorContactReport.rdlc" />
+    <EmbeddedResource Include="Reports\InspectorJobsReport\InspectorJobsReportForm.resx">
+      <DependentUpon>InspectorJobsReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InspectorJobsReport\InspectorJobsReport.rdlc" />
+    <EmbeddedResource Include="Reports\ProjectProgressReport\ProjectProgressReport.rdlc" />
+    <EmbeddedResource Include="Reports\ProjectProgressReport\ProjectProgressReportForm.resx">
+      <DependentUpon>ProjectProgressReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database1.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database1_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
+    <None Include="Resources\report-card.png" />
+    <None Include="Resources\login-w-icon.png" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\adminPicture.png" />
+    <None Include="Resources\guest.png" />
+    <None Include="Resources\addNewUserImage.png" />
+    <None Include="Resources\userGroup.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Reports\InspectorAvailabilityReport\InspectorWeeklyAvailabilityReportDataSet.xsc">
+      <DependentUpon>InspectorWeeklyAvailabilityReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\InspectorAvailabilityReport\InspectorWeeklyAvailabilityReportDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InspectorWeeklyAvailabilityReportDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\InspectorAvailabilityReport\InspectorWeeklyAvailabilityReportDataSet.xss">
+      <DependentUpon>InspectorWeeklyAvailabilityReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\InspectorContactReport\InspectorContactReportDataSet.xsc">
+      <DependentUpon>InspectorContactReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\InspectorContactReport\InspectorContactReportDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InspectorContactReportDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\InspectorContactReport\InspectorContactReportDataSet.xss">
+      <DependentUpon>InspectorContactReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\InspectorJobsReport\InspectorJobsReportDataSet.xsc">
+      <DependentUpon>InspectorJobsReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\InspectorJobsReport\InspectorJobsReportDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InspectorJobsReportDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\InspectorJobsReport\InspectorJobsReportDataSet.xss">
+      <DependentUpon>InspectorJobsReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ProjectProgressReport\ProjectProgressReportDataSet.xsc">
+      <DependentUpon>ProjectProgressReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ProjectProgressReport\ProjectProgressReportDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectProgressReportDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\ProjectProgressReport\ProjectProgressReportDataSet.xss">
+      <DependentUpon>ProjectProgressReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\concrete-texture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
